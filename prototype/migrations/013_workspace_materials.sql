@@ -1,0 +1,10 @@
+ALTER TABLE attempts ADD COLUMN started_at timestamptz;
+ALTER TABLE attempts ADD COLUMN deadline_at timestamptz;
+ALTER TABLE attempts ADD CONSTRAINT attempts_deadline_window CHECK ((started_at IS NULL AND deadline_at IS NULL) OR (started_at IS NOT NULL AND deadline_at >= started_at));
+ALTER TABLE grading_requests ADD COLUMN received_at timestamptz NOT NULL DEFAULT now();
+ALTER TABLE submissions ADD COLUMN received_at timestamptz;
+ALTER TABLE submissions ADD COLUMN deadline_at timestamptz;
+ALTER TABLE submissions ADD COLUMN on_time boolean;
+ALTER TABLE attachments DROP CONSTRAINT attachments_format_check;
+ALTER TABLE attachments ADD CONSTRAINT attachments_format_check CHECK (format IN ('xlsx','csv','pptx','docx','txt','py','js','ts','tsx','jsx','sql','json','html','css','md'));
+ALTER TABLE attachments ADD COLUMN privacy_declared_at timestamptz;

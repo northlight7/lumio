@@ -1,0 +1,50 @@
+{
+  "swire-properties": {
+    "src": "/company-logos/swire-properties.png",
+    "tone": "light"
+  },
+  "oursky": {
+    "src": "/company-logos/oursky.svg",
+    "tone": "light"
+  },
+  "asmpt": {
+    "src": "/company-logos/asmpt.svg",
+    "tone": "light"
+  },
+  "stc": {
+    "src": "/company-logos/stc.png",
+    "tone": "light"
+  },
+  "enviro-labs": {
+    "src": "/company-logos/enviro-labs.png",
+    "tone": "light"
+  },
+  "lalamove": {
+    "src": "/company-logos/lalamove.svg",
+    "tone": "light"
+  },
+  "klook": {
+    "src": "/company-logos/klook.svg",
+    "tone": "light"
+  },
+  "foodpanda": {
+    "src": "/company-logos/foodpanda.svg",
+    "tone": "light"
+  },
+  "fimmick": {
+    "src": "/company-logos/fimmick.png",
+    "tone": "light"
+  },
+  "shopline": {
+    "src": "/company-logos/shopline.svg",
+    "tone": "dark"
+  },
+  "hktvmall": {
+    "src": "/company-logos/hktvmall.png",
+    "tone": "light"
+  },
+  "mtr": {
+    "src": "/company-logos/mtr.png",
+    "tone": "light"
+  }
+}

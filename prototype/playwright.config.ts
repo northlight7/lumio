@@ -1,0 +1,2 @@
+import { defineConfig, devices } from '@playwright/test'
+export default defineConfig({ testDir: './tests/browser', outputDir: '../.internal/prototype/browser-results', fullyParallel: false, retries: 0, reporter: 'list', use: { baseURL: process.env.TEST_ORIGIN || 'http://localhost:3100', trace: 'retain-on-failure', launchOptions: { executablePath: process.env.BROWSER_EXECUTABLE_PATH } }, projects: [{name:'chromium',use:{...devices['Desktop Chrome']}}] })

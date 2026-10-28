@@ -1,0 +1,26 @@
+services:
+  db:
+    command: ["postgres", "-c", "shared_buffers=64MB", "-c", "max_connections=30", "-c", "work_mem=4MB", "-c", "maintenance_work_mem=32MB"]
+    mem_limit: 512m
+    logging: &bounded_logs
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+  migrate:
+    mem_limit: 512m
+    environment:
+      NODE_OPTIONS: --max-old-space-size=384
+    logging: *bounded_logs
+  app:
+    mem_limit: 768m
+    environment:
+      NODE_OPTIONS: --max-old-space-size=512
+      AI_GLOBAL_CONCURRENCY: ${AI_GLOBAL_CONCURRENCY:-3}
+    logging: *bounded_logs
+  proxy:
+    image: caddy:2.11.7-alpine
+    mem_limit: 128m
+    volumes:
+      - ./Caddyfile.ip:/etc/caddy/Caddyfile:ro
+    logging: *bounded_logs

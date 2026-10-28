@@ -1,0 +1,147 @@
+/* Phone presentation layout. Desktop keeps the established Playground shell. */
+.mobile-industry-picker,.mobile-collection-picker,.mobile-job-field-picker,.workspace-options-toggle,.workflow-label-short{display:none}
+body .employer-shell,body .share-shell{height:var(--app-height,100dvh)}
+@media(min-width:600px){.playground-discovery .advanced-selects .mobile-collection-picker,.playground-discovery .advanced-selects .mobile-job-field-picker{display:none}}
+
+@media(max-width:760px),(max-width:1024px) and (max-height:500px){
+  .app-shell{height:var(--app-height,100dvh);--mobile-header:calc(64px + env(safe-area-inset-top));--mobile-nav:calc(68px + env(safe-area-inset-bottom))}
+  .app-shell .sidebar{display:flex;align-items:center;height:var(--mobile-header);padding:env(safe-area-inset-top) max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left));gap:0}
+  .app-shell .brand-logo{width:128.1px;height:35px}
+  .app-shell .sidebar nav{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;height:var(--mobile-nav);margin:0;padding:4px 12px calc(4px + env(safe-area-inset-bottom));background:var(--nav);border-top:1px solid var(--rule)}
+  .app-shell .sidebar .nav-button{height:auto;min-height:56px;gap:2px;font-size:13px;border-radius:12px;flex-direction:column;justify-content:center}
+  .app-shell .sidebar .nav-button.active{background:var(--accent-soft);color:var(--accent)}
+  .app-shell .sidebar .nav-button.active::after{display:none}
+  .app-shell .sidebar .nav-button>.nav-short-label{display:inline}
+  .app-shell .sidebar .nav-button>.nav-full-label{display:none}
+  .app-shell .topbar{top:calc(8px + env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right))}
+  .app-shell .main-shell{height:calc(100% - var(--mobile-header) - var(--mobile-nav))}
+  .app-shell .main-content{padding:20px max(16px,env(safe-area-inset-right)) 28px max(16px,env(safe-area-inset-left));scroll-padding-bottom:24px}
+  .app-shell .workspace-main{--workspace-shell-height:calc(var(--mobile-header) + var(--mobile-nav));scroll-padding-top:calc(var(--workspace-toolbar-height,140px) + 28px)}
+  html[data-keyboard-open="true"] .app-shell .sidebar nav{display:none}
+  html[data-keyboard-open="true"] .app-shell .main-shell{height:calc(100% - var(--mobile-header))}
+  .app-shell #main input:not([type=checkbox]),.app-shell #main select,.app-shell #main textarea,.dialog .auth-form input,.dialog select{font-size:16px}
+  .app-shell .view-workspace .workspace-heading{gap:8px;margin-bottom:12px}
+  .app-shell .workspace-heading h1{font-size:26px}
+  .app-shell .workspace-heading .workspace-role-art{width:48px!important;height:40px!important}
+  .app-shell .workspace-heading .back-button{margin-bottom:4px}
+  .app-shell .workspace-head-meta{gap:8px;flex-wrap:wrap}
+  .app-shell .workspace-options-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:48px;padding:10px 14px;margin-bottom:8px;border:1px solid var(--rule);border-radius:12px;background:var(--surface);font-size:14px;text-align:left}
+  .app-shell .workspace-options-toggle[aria-expanded="true"]>svg{transform:rotate(90deg)}
+  .app-shell .workspace-selector:not(.options-open){display:none}
+  .app-shell .workspace-selector .variation-bar{flex-wrap:wrap}
+  .app-shell .view-workspace .workspace-navigation{display:flex;flex-direction:column;gap:6px;padding:8px 0;margin-bottom:16px}
+  .app-shell .view-workspace .workspace-navigation .deadline-card{order:-1;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;width:100%;padding:8px 12px;border-radius:12px;min-height:0}
+  .app-shell .view-workspace .deadline-card .deadline-icon{display:none}
+  .app-shell .view-workspace .deadline-card>div:nth-child(2){display:flex;align-items:baseline;justify-content:flex-start;gap:8px;min-width:0}
+  .app-shell .view-workspace .deadline-caption{font-size:12px}
+  .app-shell .view-workspace .deadline-card strong{font-size:22px;letter-spacing:0}
+  .app-shell .view-workspace .deadline-card .deadline-details{display:contents}
+  .app-shell .view-workspace .deadline-details p{grid-column:2;grid-row:1;align-self:center;margin:0;font-size:12px;white-space:nowrap}
+  .app-shell .view-workspace .deadline-details span{grid-column:1/-1;grid-row:2;min-width:0;font-size:12px;line-height:1.5}
+  .app-shell .view-workspace .workspace-navigation .deadline-untimed{grid-template-columns:minmax(0,1fr)}
+  .app-shell .view-workspace .workspace-navigation .deadline-untimed .deadline-details p{grid-column:1;grid-row:2;white-space:normal}
+  .app-shell .view-workspace .workspace-navigation .deadline-untimed .deadline-details span{display:none}
+  .app-shell .view-workspace .workspace-navigation .workspace-process{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:4px;width:100%;min-height:48px}
+  .app-shell .view-workspace .workspace-navigation .workspace-process>button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:48px;padding:4px 0;font-size:12px;line-height:1.4;text-align:center;border-radius:8px}
+  .app-shell .view-workspace .workspace-navigation .workspace-process>button:hover{background:var(--surface)}
+  .app-shell .view-workspace .workspace-navigation .workspace-process>button>b{width:20px;height:20px;font-size:12px}
+  .app-shell .workflow-label-full{display:none}
+  .app-shell .workflow-label-short{display:inline}
+  .app-shell .view-workspace .file-first-grid.team-open .colleague-panel{height:auto;min-height:0;max-height:none}
+  .app-shell .view-workspace .file-first-grid.team-open .colleague-panel .conversation{min-height:180px;max-height:360px;flex:auto}
+  .app-shell .chat-form textarea{resize:none}
+  .app-shell .chat-form{scroll-margin-bottom:20px}
+  .app-shell .workspace-company-context{flex-wrap:wrap;gap:8px 12px}
+  .app-shell .workspace-company-context>button{margin-left:auto}
+  .app-shell .work-actions{flex-wrap:wrap}
+  .app-shell .work-actions button{min-height:48px}
+  .app-shell .material-file-list small{overflow-wrap:anywhere}
+  .app-shell .portfolio-stats>div{padding:12px;gap:8px;min-width:0}
+  .app-shell .portfolio-stats .stat-icon{width:28px;height:28px}
+  .app-shell .portfolio-stats strong{font-size:28px}
+  .app-shell .portfolio-stats .privacy-stat strong{font-size:14px}
+  .dialog{padding:0 16px 20px;width:calc(100% - 16px);max-height:calc(var(--app-height,100dvh) - 16px);scroll-padding-top:88px;overscroll-behavior:contain}
+  .dialog .dialog-heading{position:sticky;top:0;z-index:5;gap:12px;margin:0 -16px 16px;padding:16px;background:var(--surface);border-bottom:1px solid var(--rule)}
+  .dialog .dialog-heading h2{font-size:22px}
+  .dialog .dialog-heading .icon-button{margin:0}
+  .dialog .dialog-actions{gap:10px}
+  .dialog .dialog-actions button{flex:1 1 160px;min-height:48px}
+  .share-shell{min-height:var(--app-height,100dvh);padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+  .share-shell .share-header{gap:12px}
+  .share-shell .share-header .topbar-actions{flex-wrap:wrap;gap:8px}
+}
+
+@media(max-width:599px){
+  .app-shell .playground-discovery .playground-intro{margin-bottom:16px;gap:0}
+  .app-shell .playground-discovery .playground-intro h1{font-size:28px;line-height:1.2}
+  .app-shell .playground-discovery .playground-intro p{font-size:15px;margin-top:8px}
+  .app-shell .playground-discovery .discovery-entry-actions{display:none}
+  .app-shell .playground-discovery .discovery-browse-controls{margin-bottom:12px}
+  .app-shell .playground-discovery .discovery-mode-tabs{margin:0;min-height:48px}
+  .app-shell .playground-discovery .discovery-mode-tabs button{font-size:14px;padding:8px}
+  .app-shell .playground-discovery .practice-collection{display:none}
+  .app-shell .playground-discovery .playground-library{gap:12px 8px}
+  .app-shell .playground-discovery .playground-library>.playground-library-heading>.search-control{grid-column:1;grid-row:1;min-height:48px;padding:0 12px}
+  .app-shell .playground-discovery .playground-filterbar>.job-field-picker{display:none}
+  .app-shell .playground-discovery .playground-filterbar>.filter-toggle{grid-column:2;grid-row:1;min-height:48px;align-self:stretch}
+  .app-shell .playground-discovery .mobile-collection-picker,.app-shell .playground-discovery .mobile-job-field-picker{display:grid}
+  .app-shell .playground-discovery .playground-resultcount{font-size:13px}
+  .app-shell .playground-discovery .career-grid{gap:12px}
+  .app-shell .playground-discovery .career-card{display:grid;grid-template-columns:88px minmax(0,1fr);grid-template-areas:'head head' 'art copy';gap:0;border-radius:20px;overflow:hidden}
+  .app-shell .playground-discovery .career-tile-head{grid-area:head;padding:16px 16px 0}
+  .app-shell .playground-discovery .career-tile-head h3{font-size:21px;margin-bottom:4px;line-height:1.3}
+  .app-shell .playground-discovery .tile-company-row{gap:8px;flex-wrap:wrap;margin:0;min-height:36px}
+  .app-shell .playground-discovery .tile-company-row .company-logo{width:72px;height:28px;padding:4px 6px}
+  .app-shell .playground-discovery .role-company-link{min-height:44px;font-size:14px}
+  .app-shell .playground-discovery .career-art-stage{grid-area:art;display:flex;flex-direction:column;justify-content:center;gap:4px;width:88px;height:auto;min-height:112px;align-self:center;overflow:hidden;padding-bottom:8px}
+  .app-shell .playground-discovery .career-art-stage::after{inset:14px 0 12px 8px}
+  .app-shell .playground-discovery .career-art-stage .role-art{width:76px;max-width:100%;margin:0;flex-shrink:0}
+  .app-shell .playground-discovery .career-tile-copy{grid-area:copy;min-width:0;padding:8px 16px 16px 8px}
+  .app-shell .playground-discovery .career-tile-copy>p{font-size:14px;line-height:1.5;margin:0 0 8px}
+  .app-shell .playground-discovery .career-card-bottom{flex-wrap:wrap;gap:6px 10px}
+  .app-shell .playground-discovery .career-card-bottom>span{font-size:12px}
+  .app-shell .playground-discovery .tile-start{font-size:14px;min-height:44px;padding:8px 12px;margin-left:auto}
+  .app-shell .playground-discovery .playground-practised,.app-shell .playground-discovery .playground-match{position:static;font-size:11px;margin:0 4px;padding:2px 4px;max-width:80px;white-space:normal;line-height:1.3}
+  .app-shell .playground-discovery .company-tile-head{padding:16px 16px 0}
+  .app-shell .playground-discovery .company-tile-head h3{font-size:22px}
+  .app-shell .playground-discovery .company-art-stage{height:112px}
+  .app-shell .playground-discovery .company-art-stage .role-art{width:180px;margin:0}
+  .app-shell .playground-discovery .company-tile-copy{padding:8px 16px 16px}
+  .app-shell .playground-discovery .company-tile-copy>div{gap:8px;flex-wrap:wrap}
+  .app-shell .playground-discovery .industry-chips{display:none}
+  .app-shell .playground-discovery .mobile-industry-picker{display:grid;gap:6px;font-size:14px;color:var(--muted);margin-bottom:12px}
+  .app-shell .playground-discovery .mobile-industry-picker select{width:100%;height:48px;font-size:16px;padding:10px 12px}
+  .app-shell .playground-discovery .industry-chips button{white-space:normal;font-size:13px;min-height:44px;padding:8px 10px}
+  .app-shell .playground-discovery .playground-resume{margin-top:12px;padding:12px;gap:8px}
+  .app-shell .playground-discovery .playground-resume>.role-art{display:none}
+  .app-shell .playground-discovery .playground-resume>div{min-width:0}
+  .app-shell .playground-discovery .playground-resume button{width:auto;margin-left:auto;min-height:44px}
+  .app-shell .playground-discovery .playground-resume p{font-size:14px}
+}
+
+@media(max-width:360px){
+  .app-shell .brand-logo{width:117.12px;height:32px}
+  .app-shell .sidebar{padding-left:12px;padding-right:12px}
+  .app-shell .topbar{right:12px}
+  .app-shell .topbar-actions{gap:6px}
+  .app-shell .main-content{padding-left:12px;padding-right:12px}
+  .app-shell .playground-discovery .playground-intro h1{font-size:26px}
+  .app-shell .playground-discovery .filter-toggle{min-width:48px;width:48px;padding:8px;justify-content:center}
+  .app-shell .playground-discovery .filter-toggle-label{display:none}
+  .app-shell .view-workspace .deadline-details span{font-size:11px}
+  .app-shell .workspace-selector .variation-actions{flex-wrap:wrap}
+  .app-shell .workspace-selector .variation-actions button{flex-basis:100%}
+  .app-shell .portfolio-stats{grid-template-columns:1fr 1fr}
+  .app-shell .portfolio-stats .stat-icon{display:none}
+}
+
+@media(max-width:1024px) and (max-height:500px){
+  .app-shell{--mobile-header:56px;--mobile-nav:56px}
+  .app-shell .sidebar .nav-button{flex-direction:row;min-height:44px;gap:8px}
+  .app-shell .topbar{top:2px}
+  .app-shell .view-workspace .workspace-navigation{padding:4px 0;gap:4px}
+  .app-shell .view-workspace .workspace-navigation .deadline-card{padding:4px 8px}
+  .app-shell .view-workspace .workspace-navigation .deadline-details span{display:none}
+  .app-shell .view-workspace .workspace-navigation .workspace-process>button{flex-direction:row;min-height:44px;gap:6px}
+  .dialog{max-height:calc(var(--app-height,100dvh) - 8px)}
+}

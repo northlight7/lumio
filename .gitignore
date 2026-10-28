@@ -1,0 +1,21 @@
+# Private runtime data and working files
+.internal/
+**/.internal/
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.key
+*.dump
+*.sql.gz
+*.log
+.DS_Store
+
+# Reproducible dependencies and generated output
+**/node_modules/
+**/.next/
+**/test-results/
+**/playwright-report/
+**/coverage/
+*.tsbuildinfo

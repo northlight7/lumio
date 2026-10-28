@@ -1,0 +1,62 @@
+/* Learner-only navigation refinements. Shared tokens and employer surfaces stay separate. */
+.view-workspace .workspace-selector .variation-actions .secondary-button{min-height:44px}
+.view-workspace .workspace-selector .choose-task-link{min-height:44px;white-space:nowrap}
+.view-workspace .task-type-bar:has(.choose-task-link){grid-template-columns:minmax(0,1fr);gap:4px}
+.view-workspace .task-type-bar .choose-task-link{justify-self:start;padding:4px 0}
+.view-workspace .workspace-navigation{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,360px);gap:16px;align-items:center;margin-bottom:20px}
+.view-workspace .workspace-navigation .workspace-process{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0;min-width:0}
+.view-workspace .workspace-process>button{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 0;border:0;background:none;color:var(--muted);font-size:14px;text-align:left}
+.view-workspace .workspace-process>button:hover{color:var(--ink)}
+.view-workspace .workspace-process>button>b{display:grid;place-items:center;flex:none;width:24px;height:24px;border-radius:50%;background:var(--raised);color:var(--cyan);font-size:14px}
+.view-workspace .workspace-process>button.text-button{color:var(--accent);margin-left:0}
+.view-workspace .workspace-navigation .deadline-card{margin:0;padding:12px 16px;gap:12px;min-height:76px}
+.view-workspace .workspace-navigation .deadline-icon{width:36px;height:36px}
+.view-workspace .workspace-navigation .deadline-card>div{min-width:0}
+.view-workspace .workspace-navigation .deadline-details{font-size:14px}
+.view-workspace .workspace-navigation .deadline-card strong{font-size:24px}
+.view-workspace .material-panel,.view-workspace .work-panel,.view-workspace .workspace-tools-target,.view-workspace .feedback-panel{scroll-margin-top:20px}
+.view-workspace .workspace-tools-target:focus,.view-workspace .material-panel:focus,.view-workspace .work-panel:focus{outline:none}
+.view-workspace .work-materials .pack-download{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:800;min-height:48px}
+.view-workspace .work-materials .pack-download:hover{background:var(--accent-hover)}
+.view-portfolio .portfolio-filterbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 8px}
+.view-portfolio .portfolio-filterbar label{display:grid;gap:6px;font-size:14px;color:var(--muted);min-width:0}
+.view-portfolio .portfolio-filterbar select{min-width:0;width:100%;min-height:44px;border:1px solid var(--rule);border-radius:12px;background:var(--paper);color:var(--ink);font:inherit;padding:10px 12px}
+.view-portfolio .portfolio-filter-result{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;font-size:14px;color:var(--muted);margin-bottom:8px}
+.view-portfolio .portfolio-filter-result button{min-height:44px}
+.view-portfolio .empty-history-filter{border:1px solid var(--rule);border-radius:20px;padding:24px;color:var(--muted)}
+.view-portfolio .empty-history-filter p{font-size:16px}
+.view-portfolio .portfolio-data-controls{border-top:1px solid var(--rule);padding-top:12px;margin-top:16px}
+.view-portfolio .portfolio-data-controls>summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-size:14px;color:var(--muted)}
+.view-portfolio .portfolio-data-controls button{min-height:44px}
+.evidence-card .evidence-latest-result{display:flex;gap:20px;align-items:center;margin:16px 0;padding:12px 16px;border-radius:12px;background:var(--paper)}
+.evidence-card .evidence-latest-result>div{display:flex;flex-direction:column;gap:4px;flex:none}
+.evidence-card .evidence-latest-result span{font-size:14px;color:var(--muted)}
+.evidence-card .evidence-latest-result strong{font-size:28px;line-height:1.2;color:var(--ink)}
+.evidence-card .evidence-latest-result small{font-size:14px;color:var(--muted);margin-left:4px}
+.evidence-card .evidence-latest-result p{font-size:14px;line-height:1.6;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.evidence-card .older-versions>summary{display:flex;align-items:center;justify-content:space-between;min-height:44px;padding:8px 0;color:var(--muted);font-size:14px;cursor:pointer;list-style:none}
+.evidence-card .older-versions>summary::-webkit-details-marker{display:none}
+@media(max-width:1100px){.view-workspace .workspace-navigation{grid-template-columns:minmax(0,1fr)}.view-workspace .workspace-navigation .deadline-card{max-width:none}}
+@media(max-width:760px){.view-workspace .workspace-navigation{gap:8px;margin-bottom:16px}.view-workspace .workspace-process>button{flex-basis:calc(50% - 6px);font-size:14px}.view-workspace .workspace-navigation .deadline-card{padding:12px}.view-workspace .workspace-navigation .deadline-card strong{font-size:26px}.view-portfolio .portfolio-filterbar{grid-template-columns:1fr 1fr}.view-portfolio .portfolio-filterbar label:nth-child(2){grid-column:1/-1;grid-row:2}.evidence-card .evidence-latest-result{gap:12px;padding:12px}.evidence-card .evidence-latest-result p{-webkit-line-clamp:3}}
+@media(prefers-reduced-motion:reduce){.view-workspace .workspace-process>button{transition:none}}
+
+.view-workspace .workspace-navigation .deadline-card{flex-wrap:wrap}.view-workspace .workspace-navigation .deadline-card>div:nth-child(2){flex:1;justify-content:space-between;gap:8px}.view-workspace .workspace-navigation .deadline-details{margin-left:48px;flex-basis:100%;font-size:14px}.view-workspace .workspace-navigation .deadline-details span{display:block;font-size:14px}
+
+.main-content .initial-connection-recovery{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border:1px solid var(--rule);border-radius:12px;background:var(--surface);color:var(--muted);font-size:14px;margin-bottom:16px}.initial-connection-recovery button{min-height:44px;white-space:nowrap}
+@media(max-width:760px){.main-content .initial-connection-recovery{flex-wrap:wrap}}
+.language-toggle button{min-width:44px;min-height:44px}
+.view-workspace .task-type-bar select,.view-portfolio .portfolio-filterbar select{appearance:none;-webkit-appearance:none;height:48px;padding-right:36px}
+.view-workspace .task-type-bar>label,.view-portfolio .portfolio-filterbar label{position:relative}
+.view-workspace .task-type-bar>label::after,.view-portfolio .portfolio-filterbar label::after{content:'';position:absolute;right:16px;bottom:21px;width:7px;height:7px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);pointer-events:none}
+
+/* The workflow and server-backed timer stay together through every task step. */
+.workspace-main{--workspace-shell-height:80px;scroll-padding-top:calc(var(--workspace-toolbar-height,150px) + var(--workspace-content-padding,32px) + 24px)}
+.view-workspace .workspace-navigation{position:sticky;top:0;z-index:8;background:var(--ground);padding:12px 0;border-bottom:1px solid var(--rule)}
+.view-workspace .workspace-navigation .deadline-card{padding:10px 14px;gap:8px 12px;box-shadow:none}
+.view-workspace .workspace-navigation .deadline-details{margin-left:0;font-size:14px;display:flex;flex-wrap:wrap;gap:0 12px}
+.view-workspace .workspace-navigation .deadline-details p{margin:0;white-space:nowrap}
+.view-workspace .workspace-navigation .deadline-details span{flex:1;min-width:170px}
+.view-workspace .file-first-grid.team-open .colleague-panel{height:calc(100dvh - var(--workspace-shell-height) - var(--workspace-toolbar-height,150px) - 64px);max-height:calc(100dvh - var(--workspace-shell-height) - var(--workspace-toolbar-height,150px) - 64px);min-height:280px}
+.view-workspace .file-first-grid.team-open .colleague-panel .conversation{flex:1;min-height:0;max-height:none}
+@media(min-width:1301px){.view-workspace .file-first-grid.team-open .colleague-panel{position:sticky;top:calc(var(--workspace-toolbar-height,150px) + 16px)}}
+@media(max-width:760px){.workspace-main{--workspace-shell-height:136px}.view-workspace .workspace-navigation{padding:8px 0}.view-workspace .workspace-navigation .deadline-card{padding:8px 12px}.view-workspace .workspace-navigation .deadline-details{gap:0 8px}.view-workspace .workspace-navigation .deadline-details span{min-width:160px}}

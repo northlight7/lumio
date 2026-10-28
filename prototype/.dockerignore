@@ -1,0 +1,14 @@
+node_modules
+.next
+.env*
+!.env.example
+test-results
+playwright-report
+tests
+*.tsbuildinfo
+.internal
+.next-*
+isolated-gauntlet*
+qa-next*
+secrets
+**/secrets

@@ -1,0 +1,34 @@
+{
+    servers {
+        timeouts {
+            read_header 10s
+            read_body 30s
+            write 420s
+            idle 2m
+        }
+    }
+}
+{$DOMAIN} {
+    encode zstd gzip
+    @task_upload {
+        method POST
+        path /api/attempts/*/attachments
+    }
+    handle @task_upload {
+        request_body {
+            max_size 5308416
+        }
+        reverse_proxy app:3000 {
+            stream_timeout 420s
+        }
+    }
+    handle {
+        request_body {
+            max_size 64KB
+        }
+        reverse_proxy app:3000 {
+            stream_timeout 420s
+        }
+    }
+    header Strict-Transport-Security "max-age=31536000"
+}
